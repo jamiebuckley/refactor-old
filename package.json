@@ -1,0 +1,23 @@
+{
+  "name": "Refactor",
+  "version": "0.0.1",
+  "dependencies": {
+    "@types/babylonjs": "^2.3.31",
+    "@types/hammerjs": "^2.0.33",
+    "@types/react": "^0.14.47",
+    "@types/react-dom": "^0.14.18",
+    "babylonjs": "^2.4.1",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "hammer-touchemulator": "0.0.2",
+    "hammerjs": "^2.0.8",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^1.2.0",
+    "webpack": "^1.13.3"
+  }
+}
