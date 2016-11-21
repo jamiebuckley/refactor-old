@@ -1,11 +1,13 @@
+var failPlugin = require('webpack-fail-plugin');
+
 module.exports = {
-    entry: "./client/src/main.tsx",
+    entry: [
+        "./client/src/main.tsx" ],
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist",
         publicPath: "/assets/",
     },
-
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
@@ -34,4 +36,7 @@ module.exports = {
         "react": "React",
         "react-dom": "ReactDOM"
     },
+    plugins: [
+        failPlugin
+    ]
 };
