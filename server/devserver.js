@@ -1,6 +1,5 @@
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./../webpack.config.js");
-//config.entry.unshift("webpack-dev-server/client?http://localhost:8080/");
 var webpack = require("webpack");
 
 module.exports = function() {
@@ -11,8 +10,6 @@ module.exports = function() {
         bundleStart = Date.now();
     });
 
-    // We also give notice when it is done compiling, including the
-    // time it took. Nice to have
     compiler.plugin('done', function() {
         console.log('Bundled in ' + (Date.now() - bundleStart) + 'ms!');
     });
@@ -20,11 +17,6 @@ module.exports = function() {
 
     var server = new WebpackDevServer(compiler, {
         publicPath: '/build/',
-
-        // Configure hot replacement
-        hot: true,
-
-        // The rest is terminal configurations
         quiet: false,
         noInfo: false,
         stats: {
@@ -35,7 +27,11 @@ module.exports = function() {
             timings: true,
             chunks: true,
             chunkModules: true
-        }
+        },
+        watchOptions: {
+            aggregateTimeout: 3000,
+            poll: 1000
+        },
     });
 
    server.listen(8080, "localhost", function () {

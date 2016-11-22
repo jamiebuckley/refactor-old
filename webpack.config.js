@@ -2,7 +2,7 @@ var failPlugin = require('webpack-fail-plugin');
 
 module.exports = {
     entry: [
-        "./client/src/main.tsx" ],
+        "./client/src/main.tsx"],
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist",
