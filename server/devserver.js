@@ -29,7 +29,7 @@ module.exports = function() {
             chunkModules: true
         },
         watchOptions: {
-            aggregateTimeout: 3000,
+            aggregateTimeout: 1000,
             poll: 1000
         },
     });

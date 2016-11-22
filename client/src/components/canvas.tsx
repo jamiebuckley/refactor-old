@@ -2,17 +2,17 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Vector3 = BABYLON.Vector3;
 import HammerCameraInput from "../game/hammerCameraInput";
-import Scene from "../game/scene";
+import Game from "../game/game";
 
-export interface GameProps {  }
+export interface CanvasProps {  }
 
-export class Game extends React.Component<GameProps, {}> {
+export class Canvas extends React.Component<CanvasProps, {}> {
     componentDidMount() {
        let el = ReactDOM.findDOMNode(this) as HTMLCanvasElement;
-       let scene = new Scene(el);
+       let scene = new Game(el);
     }
 
     render() {
-        return <canvas width="800" height="600"></canvas>;
+        return <canvas style={{width: "100%", height: "100%"}}></canvas>;
     }
 }
