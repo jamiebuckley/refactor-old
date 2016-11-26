@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {MenuButton} from "./menuButton";
+import {SubMenu} from "./subMenu";
+import {Clock} from "./clock";
 
 export class UI extends React.Component<{}, {}> {
     componentDidMount() {
@@ -11,7 +13,9 @@ export class UI extends React.Component<{}, {}> {
 
     render() {
         return (<div id="uiLayer" className="fullScreen noTouch">
+            <Clock/>
             <MenuButton/>
+            <SubMenu/>
         </div>);
     }
 }

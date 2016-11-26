@@ -1,4 +1,4 @@
-$primary-color: #8ecfba;
+$primary-color: #73d2b5;
 
 body, html {
   width: 100%;
@@ -34,13 +34,8 @@ body, html {
 
 .circleButton {
   display: block;
-  background-color: #f7f7f7;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
-  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
-  color: #a7a7a7;
+  background-color: $primary-color;
+  color: #fff;
   margin: 36px;
   width: 60px;
   height: 60px;
@@ -48,19 +43,36 @@ body, html {
   text-align: center;
   line-height: 60px;
   border-radius: 50%;
-  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   pointer-events: all;
   cursor:pointer;
+  background: linear-gradient(to bottom,  $primary-color 0%, darken($primary-color, 15%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .circleButton:hover {
-  background-color: #dfdfdf;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#e7e7e7));
-  background-image: -webkit-linear-gradient(top, #dfdfdf, #e7e7e7);
-  background-image: -moz-linear-gradient(top, #dfdfdf, #e7e7e7);
-  background-image: -ms-linear-gradient(top, #dfdfdf, #e7e7e7);
-  background-image: -o-linear-gradient(top, #dfdfdf, #e7e7e7);
-  box-shadow: 0px 3px 8px #868686, inset 0px 2px 3px #fff;
+  animation-name: lighten;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+.circleButton:active {
+  animation-name: darken;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes lighten {
+  from {
+    background: linear-gradient(to bottom,  $primary-color 0%, darken($primary-color, 15%) 100%);
+  }
+  to {
+    background: linear-gradient(to bottom,  $primary-color 0%, darken($primary-color, 5%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73d2b5', endColorstr='#3bcc9e',GradientType=0 ); /* IE6-9 */
+  }
+}
+
+@keyframes darken {
+  from {background-color: $primary-color; }
+  to {background-color: darken($primary-color, 10%);}
 }
 
 [class*=" icon-"] {
