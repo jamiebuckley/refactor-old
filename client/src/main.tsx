@@ -4,7 +4,12 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Canvas } from "./components/canvas";
+import { UI } from "./components/ui";
+
 ReactDOM.render(
-    <Canvas />,
+    <div>
+        <Canvas />
+        <UI />
+    </div>,
     document.getElementById("game")
 );
