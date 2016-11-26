@@ -6,7 +6,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist",
-        publicPath: "/assets/",
+        publicPath: "http://localhost:8080/assets/",
     },
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
@@ -19,7 +19,10 @@ module.exports = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"] },
+            { test: /\.css$/, loaders: ["style-loader", "css-loader"]},
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
         ],
 
         preLoaders: [

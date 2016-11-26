@@ -16,7 +16,7 @@ module.exports = function() {
 
 
     var server = new WebpackDevServer(compiler, {
-        publicPath: '/build/',
+        publicPath: 'http://localhost:8080/assets/',
         quiet: false,
         noInfo: false,
         stats: {

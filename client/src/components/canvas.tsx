@@ -9,10 +9,13 @@ export interface CanvasProps {  }
 export class Canvas extends React.Component<CanvasProps, {}> {
     componentDidMount() {
        let el = ReactDOM.findDOMNode(this) as HTMLCanvasElement;
+       el.width  = window.innerWidth;
+       el.height = window.innerHeight;
+
        let scene = new Game(el);
     }
 
     render() {
-        return <canvas style={{width: "100%", height: "100%"}}></canvas>;
+        return <canvas className="fullScreen"></canvas>;
     }
 }
